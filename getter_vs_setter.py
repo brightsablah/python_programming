@@ -16,3 +16,15 @@ class ToyCar:
             self._engine_power = 100
         else:
             self._engine_power = value
+
+
+# How it works
+
+my_car = ToyCar("red", 90)
+
+# Getting the engine power (calls the getter)
+print(my_car.engine_power)  # Outputs: 90
+
+# Setting the engine power (calls the setter)
+my_car.engine_power = 120  # Outputs: "Power too high! Setting to maximum allowed (100)."
+print(my_car.engine_power)  # Outputs: 100
