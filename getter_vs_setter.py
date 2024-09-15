@@ -1,7 +1,7 @@
 class ToyCar:
     def __init__(self, color, engine_power):
         self.color = color
-        self._engine_power = engine_power  # Protected attribute
+        self.engine_power = engine_power  # Protected attribute
 
     # Getter method for engine_power
     @property
