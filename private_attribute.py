@@ -6,7 +6,7 @@ class Square:
     """Square Class"""
     def __init__(self, size=0, position=(0, 0)):
         self.__size = size
-        self.__position = position
+        self.position = position
 
     @property
     def size(self):
@@ -52,7 +52,7 @@ class Square:
 
 
 
-Square(3).my_print()
+Square(5).my_print()
 print("--")
 
 Square(3, (1, 1)).my_print()
