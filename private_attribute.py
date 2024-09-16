@@ -5,8 +5,8 @@
 class Square:
     """Square Class"""
     def __init__(self, size=0, position=(0, 0)):
-        self.__size = size
-        self.position = position
+        self.size = size  # Use setter for validation
+        self.position = position  # Use setter for validation
 
     @property
     def size(self):
@@ -23,32 +23,34 @@ class Square:
     @property
     def position(self):
         return self.__position
-    
+
     @position.setter
     def position(self, value):
+        # Validate that value is a tuple and has 2 elements
         if not isinstance(value, tuple) or len(value) != 2:
             raise TypeError("position must be a tuple of 2 positive integers")
-        if  not all(isinstance(i, int) and i > 0 for i in value):
+        # Validate that both elements are integers and >= 0
+        if not all(isinstance(i, int) and i >= 0 for i in value):
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
-    
+
     def area(self):
-        area = self.size * self.size
-        return area
+        return self.size * self.size
 
     def my_print(self):
         if self.size == 0:
             print()
             return
         
-        # vertical padding (position[1])
-        for i in range(self.position[1]):
+        # Print the vertical padding (position[1])
+        for _ in range(self.position[1]):
             print()
 
-        # square with hosrizontal padding (position[0])
-        for j in range(self.size):
-            print(" " * self.position[0], end="")
-            print("#" * self.size)
+        # Print the square with horizontal padding (position[0])
+        for i in range(self.size):
+            print(" " * self.position[0], end="")  # Print spaces for position[0]
+            print("#" * self.size)  # Print the square row
+
 
 
 
