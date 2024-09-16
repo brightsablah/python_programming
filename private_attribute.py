@@ -62,4 +62,4 @@ print("--")
 
 Square(3, (3, 0)).my_print()
 
-Square(0, (0,-3)).my_print()
+Square(-9, (0,3)).my_print()
